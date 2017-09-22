@@ -23,6 +23,19 @@
             signed-in="{{signedIn}}"
             user="{{user}}">
         </firebase-auth>
+
+        <paper-fab
+            icon="add"
+            on-tap="create"
+            disabled="[[!online]]"
+            aria-label="Add note">
+        </paper-fab>
+
+        <na-editor
+            id="editor"
+            note="{{editableNote}}"
+            on-close="commitChange">
+        </na-editor>
     </template>
 
     <script>
